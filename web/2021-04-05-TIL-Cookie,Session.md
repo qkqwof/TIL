@@ -14,7 +14,7 @@
 3. 서버로 다시 돌아간다.
 
 **Cookie의 용도**
-    - 서버와 브라우저 사이를 오가면서 HTTP Protocol에서 처음 접속하는 Client를 JsessionId(일종의 클라이언트 아이디...)값을 통해 알려준다.
+- 서버와 브라우저 사이를 오가면서 HTTP Protocol에서 처음 접속하는 Client를 JsessionId(일종의 클라이언트 아이디...)값을 통해 알려준다.
 
 ## Session
 

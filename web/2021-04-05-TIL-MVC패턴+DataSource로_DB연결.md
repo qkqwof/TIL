@@ -1,6 +1,7 @@
 ## MVC패턴+ DataSource로 DB연결
 
-**MVC패턴**은 비즈니스 로직이 들어가는 DAO와 VO(**Model**), Servlet을 통한 요청과 응답(**Controller**), jsp파일로 브라우저에 결과를 보여주는 페이지(**View**)이다.
+**MVC패턴**
+비즈니스 로직이 들어가는 DAO와 VO(**Model**), Servlet을 통한 요청과 응답(**Controller**), jsp파일로 브라우저에 결과를 보여주는 페이지(**View**)이다.
 
 ![mvc패턴](https://user-images.githubusercontent.com/76687078/113566188-2e62bf80-9647-11eb-98ce-d27249aaa971.jpg)
 
