@@ -223,3 +223,78 @@ Peter
 Texas
 1201234
 
+### SET
+
+중복을 허용하지 않는다.
+순서가 없다.
+    
+순서가 없기 때문에 인덱싱을 통해서 자료를 조회할 수 없다.
+인덱싱을 사용하려면 리스트, 튜플 자료형으로 변환한 후 사용할 수 있다.
+list(), tuple() 변환함수 사용
+    
+중복을 허용하지 않는 SET 특징을 자료형의 중복을 제거하기 위한 필터 역할로 종종 사용된다.
+[1,1,2.22,3,4,5,5,5,6,6]
+set([1,1,2.22,3,4,5,5,5,6,6])
+
+``` python
+my_set = {'a','b','c','a','b'}
+my_set
+```
+{'a', 'b', 'c'}
+
+``` python
+# 중복을 벗겨내는 필터링 역할
+a = [1,2,2,3,4,5,5,6,78,2,1]
+print(a)
+
+set_a = set(a)
+print(set_a)
+
+list_a=list(set_a)
+print(list_a)
+```
+​
+list_a=list(set_a)
+print(list_a)
+[1, 2, 2, 3, 4, 5, 5, 6, 78, 2, 1]
+{1, 2, 3, 4, 5, 6, 78}
+[1, 2, 3, 4, 5, 6, 78]
+
+``` python
+# 문제 1. 위에서 출력된 결과 list_a를 내림차순으로 정렬해보자
+# sort 리턴타입이 None이다.
+
+list_sort = list_a.sort(reverse=True)
+print(list_sort)
+
+print(sorted(list_a, reverse=True))
+```
+
+None
+[78, 6, 5, 4, 3, 2, 1]
+
+#### SET 관련 함수
+    add() | update() | remove()
+
+``` python
+#1. 하나의 값 추가하기...add()
+s1 = set([1,2,3])
+s1.add(5)
+s1
+
+#2. 값 여러개 추가하기...update
+s2 = {4,5,6,7}
+s1.update(s2)
+s1
+```
+
+{1, 2, 3, 5}
+{1, 2, 3, 4, 5, 6, 7}
+
+``` python
+#3. 값 제거하기...remove()
+
+s1.remove(1)
+s1
+```
+{2, 3, 4, 5, 6, 7}
