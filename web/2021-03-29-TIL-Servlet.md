@@ -1,3 +1,46 @@
+## Servlet
+java를 이용하여 웹페이지를 동적으로 생성하는 서버 측 프로그램이다.
+### Generic Servlet & Http Servlet
+
+![Servlet](./img/Servlet.jpg)
+
+**Generic Servlet**
+
+Servlet<<interface>>, ServletConfig<<interface>>의 자식
+
+- Servlet는 하나의 process같은 개념이다. 그러므로 여러 요청이 있으면 프로세스 안에 쓰레드가 여러개 만들어짐.
+- Thread 하나랑 맞먹는 메소드가 service이다.
+
+![Genericservlet](./img/Genericservlet.png)
+
+- ServletRequest와 ServletResponse는 hashing 관계이다.
+- javax.servlet 과 연관, 프로토콜 독립적. 모든 프로토콜(telnet, ftp, http..)에서 돌아갈 수 있는 모듈이 만들어짐
+
+ **Http Servlet**
+
+Generic Servlet<<abstract>>의 자식이다. 
+
+![httpservlet](./img/httpservlet.png)
+
+- HttpServlet 부모의 service()를 가져다 썼지만 인자값이 달라짐.
+- HttpServletRequest와 HttpServletResponse는 hasing 관계이다.
+- javax.servlet.http와 연관, 프로토콜 종속적. 오직 http 프로토콜에서만 돌아갈 수 있는 모듈이 만들어짐.
+
+결론: 우리는 Http Servlet을 사용한다.
+
+***
+- 배포, 서버 시작, 요청을 이클립스가 대신 해준다.
+
+프로젝트 단위(ContextPath)로 배포되어야 한다.
+
+- conf - 서버 설정 파일 webapps - 웹이 배포되는 최상위 폴더(ContextPath 단위)
+
+- deploy 설정(배포)
+
+서버 더블 클릭 -> Use tomcat installation... 으로 설정 -> Deploy path -> 경로 설정
+
+***
+<실습내용>
 ``` html
 <!DOCTYPE html>
 <html>
