@@ -118,3 +118,90 @@ e.g) HTML, TEXT, Image, 음성, 영상, 파일, JSON, XML 등등 거의 모든 �
 하지만 지속연결을 활용하여 시간적인 문제를 해결하였다. 기존의 각각의 데이터들을 연결하고 종료하는 것이 아닌 데이터를 연결할 때부터 끝날 때까지 지속적으로 연결하여 응답 시간을 줄였다.
 
 ### HTTP 메시지
+
+#### HTTP 메시지 구조
+
+![메시지구조](./img/메시지구조.jpg)
+
+기본적으로 HTTP 메시지 구조는 그림과 같다.
+<br>
+<br>
+
+#### HTTP 요청 메시지
+
+![http요청메시지2](./img/http요청메시지2.jpg)
+요청 메시지도 body 본문을 가질 수 있다.
+
+#### <시작 라인> 
+
+<br>
+
+**요청 메시지**
+- start-line = request-line
+- request-line => method SP(공백) request-target(path) SP HTTP- version CRLF(엔터) 
+
+    - HTTP 메서드(GET:조회)
+    - 요청 대상(/search?q=hello&hl=ko)
+    - HTTP Version
+
+**HTTP 메서드**
+- 종류 : GET, POST, PUT, DELETE...
+- 서버가 수행해야 할 동작 지정
+    - GET : 리소스 조회
+    - POST : 요청 내역 처리
+
+**요청 대상**
+- absolute-path[?query] (절대경로[?쿼리])
+- 절대경로 = "/"로 시작하는 경로
+  * 참고: *, http://...?x=y와 같이 다른 유형의 경로 지정 방법도 있다.
+
+**HTTP 버전**
+- HTTP Version(HTTP/1.1 등)
+
+#### <HTTP 헤더>
+
+- header-field = field-name ":" OWS field-value OWS (OWS: 띄어쓰기 허용)
+- field-name은 대소문자 구분 없음(value는 대소문자 구분)
+
+#### HTTP 응답 메시지
+
+![http응답메시지2](./img/http응답메시지2.jpg)
+
+#### <시작 라인> 
+
+<br>
+
+**응답 메시지**
+- start-line = status-line
+- status-line = HTTP-version SP status-code(상태코드) SP reason-phrase CRLF
+
+    - HTTP 버전
+    - HTTP 상태 코드 : 요청 성공, 실패를 나타낸다.
+        - 200 : 성공
+        - 400 : 클라이언트 요청 오류
+        - 500 : 서버 내부 오류
+
+    - reason-phrase : 사람이 이해할 수 있는 짧은 상태 코드 설명 글
+
+#### <HTTP 헤더>
+
+- header-field = field-name ":" OWS field-value OWS (OWS: 띄어쓰기 허용)
+- field-name은 대소문자 구분 없음(value는 대소문자 구분)
+
+**용도**
+
+- HTTP 전송에 필요한 모든 부가정보
+e.g) 메시지 바디의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트(브라우저) 정보, 서버 애플리케이션 정보, 캐시 관리 정보...
+- 표준 헤더가 너무 많다.
+- 필요할 시 임의의 헤더를 추가할 수 있다.
+
+#### <HTTP 메시지 바디>
+
+- 실제 전송할 데이터
+- HTML 문서, 이미지, 영상, JSON 등등 byte로 표현할 수 있는 모든 데이터를 전송 가능하다.
+
+
+### 단순함 확장가능
+- HTTP는 단순하다.
+- HTTP 메시지도 매우 단순하다.
+- 크게 성공하는 표준 기술은 단순하지만 확장 가능한 기술이다.
