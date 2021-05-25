@@ -1,9 +1,31 @@
-## Servlet 구조
+## Servlet API
 
-![ServletAPI](https://user-images.githubusercontent.com/76687078/112987022-34ffbb80-919d-11eb-9e92-6754f514333f.jpg)
+![ServletAPI](./img/ServletAPI.jpg)
 
-일단 서블릿의 상속 구조를 살펴보면 GenericServlet은 Servlet과 ServletConfig를 상속받고 있고 HttpServlet이 GenericServlet을 상속받고 있다. 
-GenericServlet은 ServletRequest와 ServletResponse와 헤징 관계를 가지고 있다. ServletRequest의 getParameter, getParameterValue메서드를 이용할 수 있고, ServletResponse의 printWriter 메서드를 이용할 수 있다. 우리는 Http에 특화된 HttpServlet, HttpRequest, HttpResponse를 이용한다.
+### GenericServlet(javax.servlet 패키지)
+
+- service(ServletRequest req, ServletResponse res)
+- ServletRequest() : client → server
+from에 입력된 값을 받아감
+- getParameter() : String
+- getParameterValues() : String[] (아이디 비번 받아갈때 등 사용, multiple한 값)
+- getParameterNames() : Enumeration
+- ServletResponse() : server → client
+
+### HttpServlet (javax.servlet.http 패키지)
+
+- service(HttpServletRequest hreq, HttpServletResponse hres)
+
+---
+
+### HttpServlet method
+
+- doGet(hreq, hres) : Get method
+- doPoset(hreq, hres) : Post method
+
+    ⇒ 두개를 service 대신에 사용한다. http에 특화된 서비스이다
+
+    하지만 내부적으로 작동할 때는 우선 service가 호출되고 doGet(), doPost()가 재호출된다.
 
 ## GET방식과 POST 방식
 

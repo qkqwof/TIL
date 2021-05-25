@@ -108,33 +108,6 @@ annotation : 자동으로 서블릿 객체를 생성해준다. 서블릿 파일�
 ![전체구조](./img/전체구조.jpg)
 ***
 
-## Request & Response
-
-![MVC](./img/MVC.jpg)
-
-MVC모델 구조 -> 가장 기본적인 web에서의  요청과 응답하는 구조
-
-### Client Request
-
-- **Post** -> doPost(){}
-    1. 전송할 데이터가 많을때 사용, 데이터 전송이 목적
-    2. 객체에 담겨서 전송, 보안 상 노출되면 안되는 데이터는 post방식으로 전송
-    3. 데이터의 개수나 크기에 제한이 없다
-- **Get** -> doget(){}
-    1. data 전달이 목적이 아님
-    2. page 연결이 목적(데이터 조금)
-    3. request 객체에 data 안담긴다.
-    4. <a href = "AServlet ?id = ~*& pass=~*> 
-
-        ⇒  get 방식일 때 데이터 전송 방식, Query String이라고 함
-    5. 주소 창에 값이 노출되어 서버에 전송, 보안 상 우려가 있음(크기와, 개수의 제한이 있다)
-
-### Response
-
-- Servlet의 역할은 결과 페이지와는 상관 없음. 즉, 출력문이 존재하면 안된다.
-출력은 jsp가 한다. 응답을 하기 위해서 jsp는 값을 가져야한다.
-
-
 
 **이클립스 한글 처리**
 Window -> Preferences -> General -> workspace -> Text file encoding -> UTF-8

@@ -27,7 +27,6 @@ Generic Servlet<<abstract>>의 자식이다.
 - javax.servlet.http와 연관, 프로토콜 종속적. 오직 http 프로토콜에서만 돌아갈 수 있는 모듈이 만들어짐.
 
 결론: 우리는 Http Servlet을 사용한다.
-
 ***
 - 배포, 서버 시작, 요청을 이클립스가 대신 해준다.
 
