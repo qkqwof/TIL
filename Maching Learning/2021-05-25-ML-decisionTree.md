@@ -48,6 +48,15 @@
     - 엔트로피가 1이면 불순도가 최대이다.
 - 앞서 얘기했다시피 결정 트리는 불순도를 최소화(순도를 최대화)하는 방향으로 학습을 진행한다.
 
+### DecisionTree의 한계점
+- Decision Tree는 Variance가 큰 모델이다. Input이 조금이라도 변하면 모델이 크게 변한다.
+- Training DataSet에 너무 의존적이여서 Overfitting의 위험성이 있다.
+
+![DT8](./img/DT8.jpg)
+
+따라서 실제로 Random Forest로 Decision Tree를 여러개를 결합하여 Variance(변동성)을 낮춘다.
+그렇게 하면 오른쪽에서 보는 것과 같이 어느정도 Variance를 낮춘다.
+
 **<실습진행>**
 
 ``` python
