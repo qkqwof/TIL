@@ -201,6 +201,36 @@ public class ReadContext extends HttpServlet {
 
 전체적인 모습을 보여준다.
 
+### ServletContext에 정보를 추가하는 방법
+
+1. 화면을 통해 ServletContext 정보 추가 -> Service() 에서 정보 추가
+2. 서버가 시작할 때 정보를 교환(D.D 파일 사용) -> LifeCycle 이전에 진행해야 한다.
+-> Listener 사용
+
+    1) Listener(감시자) 
+
+    이벤트를 감시하는 감시자 -> ServletContextLister : ServletContextEvent가 발생하는 지를 감시한다.
+    ContextInitalized() -> Listener인 Application이 시작되면 호출
+    Contextdestroyed()→ Listener인 Application이 종료되면 호출
+
+    2) Event(사건의 발생)
+
+     ServeltContextEvent : D.D파일에서 ServletContext에 값이 들어간 것을 말한다.
+    -> Servlet에 Annotation이 불가능하다.
+
+---
+
+- ServletContext는 Servlet 차원이 아니라 Container 차원에서 관리가 되기 때문에 annotation으로     사용할 수 없음
+
+- 생성자 안에서 getServletContext()를 쓰면 안된다.
+
+ServletContext는 생성자가 아닌 init()에서 받아야 한다.
+
+ServletConfig를 받아오는 시점이 init()이고 getServletContext()를 통해 받기 때문이다.
+
+- WAS안에 jsp를 만들어놓으면 WAS는 이것을 Servlet으로 convert시킨다.
+
+Container는 Java기반이므로 Java는 인식하지만 tag는 해석하지 못하기 때문에 jsp를  java로 변경하고 이를 클래스파일로 만들어 인스턴스를 생성한다.
 
 ``` html
 <?xml version="1.0" encoding="UTF-8"?>
