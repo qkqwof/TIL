@@ -78,6 +78,8 @@ def plot_feature_importances_cancer(gbm):
 plot_feature_importances_cancer(gbm)
 ```
 
+![Boosting2](./img/Boosting2.png)
+
 ### Grid Search
 
 ``` python
