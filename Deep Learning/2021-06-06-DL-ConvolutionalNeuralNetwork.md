@@ -89,5 +89,15 @@ output size는 딱 절반 크기가 된다.
 - Average Pooling : 윤곽선 추출
 - Pooling 연산은 w가 없어서 학습이 되지 않는다.
 
+![CNN16](./img/CNN16.jpg)
 
+#### Validation Test, Test와 Batch-size의 관계
+
+![CNN17](./img/CNN17.jpg)
+
+![CNN18](./img/CNN18.jpg)
+
+![CNN19](./img/CNN19.jpg)
+
+Validation Test를 하는 이유는 loss를 점점 낮게 만들어서 최종 test 때, 가장 낮은 loss로 테스트하게 해서 성능을 높여 준다고 할 수 있다.
 
