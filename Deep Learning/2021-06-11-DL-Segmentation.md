@@ -95,7 +95,13 @@
 
 - 따라서 실제로는 Interpolation이 더 많이 쓰인다고 한다.
 
+#### MIOU
+- 세그멘테이션에서 사용하는 성능지표
+
 ![seg10](./img/seg10.jpg)
+
+
+#### 바이너리 문제와 Segmentation Data 변형
 
 ![seg11](./img/seg11.jpg)
 
