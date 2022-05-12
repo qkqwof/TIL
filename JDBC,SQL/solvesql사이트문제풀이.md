@@ -34,3 +34,29 @@ select *
 from station
 where lat > (select lat from station where name = '서울북부지방법원')
 ```
+
+<br>
+
+- 작품이 없는 작가 찾기
+```sql
+SELECT at.artist_id
+     , at.name
+FROM artists at
+LEFT JOIN artworks_artists aa ON at.artist_id = aa.artist_id
+WHERE death_year is not null AND artwork_id is null
+```
+
+<br>
+
+- 멘토리 짝궁 리스트
+```sql
+select mentee.employee_id as mentee_id,
+       mentee.name as mentee_name,
+       mentor.employee_id as mentor_id,
+       mentor.name as mentor_name
+from employees mentee, employees mentor
+where mentee.join_date between '2021-09-01' and '2021-12-31'
+  and mentor.join_date <= '2019.12.31'
+  and mentee.department != mentor.department
+order by mentee_id, mentor_id
+```
